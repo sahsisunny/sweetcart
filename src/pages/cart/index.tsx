@@ -1,5 +1,3 @@
 export default function Cart() {
-  return (
-    <main>Cart</main>
-  )
+    return <main>Cart</main>;
 }
