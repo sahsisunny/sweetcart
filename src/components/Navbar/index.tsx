@@ -9,7 +9,7 @@ function Navbar() {
 
     return (
         <nav
-            className="w-full h-16 shadow-md  justify-between items-center px-4 lg:px-20 py-10 hidden lg:flex"
+            className="w-full h-16 shadow-md  justify-between items-center px-4 lg:px-20 py-10 hidden lg:flex sticky top-0 left-0 z-10 bg-white"
             id="navbar"
         >
             <div

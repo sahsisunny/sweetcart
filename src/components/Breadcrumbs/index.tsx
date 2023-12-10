@@ -11,11 +11,11 @@ interface BreadcrumbsProps {
 
 const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items }) => {
     return (
-        <nav className="text-sm">
+        <nav className="text-sm font-semibold">
             <ol className="list-none p-0 inline-flex">
                 {items.map((item, index) => (
                     <li key={index} className="flex items-center">
-                        {index > 0 && <span className="mx-2">&#8250;</span>}
+                        {index > 0 && <span className="mx-2">/</span>}
                         <Link href={item.href}>
                             <p className="text-blue-500">{item.text}</p>
                         </Link>

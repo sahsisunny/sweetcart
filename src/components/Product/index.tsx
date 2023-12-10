@@ -16,7 +16,7 @@ interface CategoriesProps {
 
 const ProductItem = ({ img, title, subtitle, price }: CategoriesProps) => {
     return (
-        <div className="relative w-full sm:w-80 rounded-[1rem] p-4 m-4 shadow-lg transition-all duration-500 ease-in-out cursor-pointer">
+        <div className="relative w-screen sm:w-80 rounded-[1rem] p-4 sm:m-4 shadow-lg transition-all duration-500 ease-in-out cursor-pointer">
             <div className="mb-4 relative rounded-tr-[4rem] rounded-[0.7rem]">
                 <Image
                     width={300}

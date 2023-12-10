@@ -4,21 +4,24 @@ import { FaRegUser, FaUser } from 'react-icons/fa6';
 import { BsHandbagFill, BsHandbag } from 'react-icons/bs';
 import { BiSolidCategory, BiCategory } from 'react-icons/bi';
 import { BiSolidHome, BiHomeAlt } from 'react-icons/bi';
+import Modal from '@/components/Modal';
+import Link from 'next/link';
 
 interface MobileTabProps {
     label: string;
     icon: IconType;
     isActive: boolean;
     href: string;
+    onClick?: () => void;
 }
 
-const MobileTab: React.FC<MobileTabProps> = ({ label, icon: Icon, href }) => {
+const MobileTab: React.FC<MobileTabProps> = ({ label, icon: Icon, href, onClick, isActive }) => {
     return (
         <div className="w-1/4 flex justify-center items-center text-gray-500">
-            <a className="flex flex-col items-center" href={href}>
-                <Icon className="text-2xl text-center" />
+            <Link className="flex flex-col items-center" href={href} onClick={onClick}>
+                {isActive ? <Icon className="text-2xl text-center" /> : <Icon className="text-2xl text-center" />}
                 <p className="text-center text-sm">{label}</p>
-            </a>
+            </Link>
         </div>
     );
 };
@@ -31,10 +34,15 @@ interface TabConfig {
 }
 
 interface MobileBarProps {
-    activeTab: 'home' | 'categories' | 'cart' | 'account';
+    activeTab: string;
 }
 
 const MobileBar: React.FC<MobileBarProps> = ({ activeTab }) => {
+    console.log(`MobileBar: ${activeTab}`);
+
+    const [showModal, setShowModal] = React.useState(false);
+    const onClose = () => setShowModal(false);
+
     const tabs: TabConfig[] = [
         {
             label: 'Home',
@@ -54,12 +62,6 @@ const MobileBar: React.FC<MobileBarProps> = ({ activeTab }) => {
             href: '/cart',
             activeIcon: BsHandbagFill,
         },
-        {
-            label: 'Account',
-            icon: FaRegUser,
-            href: '/account',
-            activeIcon: FaUser,
-        },
     ];
 
     return (
@@ -68,11 +70,23 @@ const MobileBar: React.FC<MobileBarProps> = ({ activeTab }) => {
                 <MobileTab
                     key={index}
                     label={tab.label}
-                    icon={activeTab === tab.label ? tab.activeIcon : tab.icon}
-                    isActive={activeTab === tab.label.toLowerCase()}
+                    isActive={activeTab == tab.href}
+                    icon={activeTab === tab.href ? tab.activeIcon : tab.icon}
                     href={tab.href}
                 />
             ))}
+            <div className="w-1/4 flex justify-center items-center text-gray-500">
+                <button className="flex flex-col items-center" onClick={() => setShowModal(true)}>
+                    {showModal ? (
+                        <FaUser className="text-2xl text-center" />
+                    ) : (
+                        <FaRegUser className="text-2xl text-center" />
+                    )}
+                    <p className="text-center text-sm">Account</p>
+                </button>
+            </div>
+
+            {showModal && <Modal onClose={onClose} />}
         </div>
     );
 };

@@ -4,7 +4,7 @@ import { CiSearch } from 'react-icons/ci';
 
 function NavbarMobile() {
     return (
-        <nav className="w-full h-16 shadow-md flex justify-between items-center px-4 py-10 lg:hidden sticky top-0 left-0 bg-white z-10">
+        <nav className="w-screen h-16 shadow-md flex justify-between items-center px-4 py-10 lg:hidden sticky top-0 left-0 z-10 bg-white">
             <div className="logo text-lg flex justify-center items-center " id="logo">
                 <FaStoreAlt className="text-3xl mr-2" />
                 <span className="tracking-wide text-center">Sanjay Ji Misthan Bhandar And Resturent</span>

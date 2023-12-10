@@ -24,12 +24,12 @@ const Modal = ({ onClose }: LoginModalProps) => {
 
     return (
         <dialog
-            className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-80 z-50"
+            className="fixed top-0 left-0 w-full h-full flex justify-center items-center bg-black bg-opacity-80 "
             id="login-modal"
         >
             <div
                 ref={modalRef}
-                className=" p-6 rounded-md w-[30%] relative flex flex-col justify-center items-center bg-white "
+                className=" p-6 rounded-md sm:w-[30%] w-screen relative flex flex-col justify-center items-center bg-white "
             >
                 <div className=" flex justify-between items-center w-full mb-8">
                     <h2 className="font-bold text-lg">Sign in</h2>
