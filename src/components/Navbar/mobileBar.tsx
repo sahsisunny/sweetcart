@@ -15,7 +15,6 @@ interface MobileTabProps {
 const MobileTab: React.FC<MobileTabProps> = ({
   label,
   icon: Icon,
-  isActive,
   href,
 }) => {
   return (
@@ -68,7 +67,7 @@ const MobileBar: React.FC<MobileBarProps> = ({ activeTab }) => {
   ];
 
   return (
-    <div className="w-full h-16 flex justify-between items-center bg-white lg:hidden border-2 sticky bottom-0 left-0">
+    <div className="w-screen h-16 flex justify-between items-center bg-white lg:hidden border-2 sticky bottom-0 left-0">
       {tabs.map((tab, index) => (
         <MobileTab
           key={index}

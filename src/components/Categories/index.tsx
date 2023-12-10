@@ -66,11 +66,12 @@ const data = [
 
 const Categories = () => {
   return (
-    <section className="flex flex-col justify-center items-center bg-gray-100  py-10">
+    <section className="w-screen flex flex-col justify-center items-center bg-gray-100  py-10">
       <h2 className="text-2xl font-semibold text-gray-800 text-center mb-5">
         Top Categories
       </h2>
-      <div className=" w-screen flex flex-row items-center  overflow-x-scroll no-scrollbar">
+      <div className="sm:w-[90vw] w-screen
+      flex flex-row items-center  overflow-x-scroll no-scrollbar">
         {/* <div 
         className="p-4 flex items-center justify-center bg-white rounded-full shadow-lg cursor-pointer absolute left-0 ml-20 z-10 ">
           <FaAngleLeft className="text-2xl text-gray-800" />

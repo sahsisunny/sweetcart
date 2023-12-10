@@ -15,8 +15,8 @@ interface CategoriesProps {
 
 const ProductItem = ({ img, title, subtitle, price }: CategoriesProps) => {
   return (
-    <>
-      <div className="relative w-screen sm:w-[250px] rounded-[1rem] m-6 sm:p-4 p-8 shadow-lg transition-all duration-500 ease-in-out">
+   
+      <div className="relative w-full sm:w-80 rounded-[1rem] p-4 m-4 shadow-lg transition-all duration-500 ease-in-out">
         <div className="mb-4 relative rounded-tr-[4rem] rounded-[0.7rem]">
           <img
             src={img}
@@ -50,7 +50,7 @@ const ProductItem = ({ img, title, subtitle, price }: CategoriesProps) => {
           </button>
         </div>
       </div>
-    </>
+
   );
 };
 
@@ -143,7 +143,7 @@ const data = [
 
 const Product = () => {
   return (
-    <section className="flex flex-col justify-center items-center py-10 bg-gray-100">
+    <section className="flex flex-col justify-center items-center bg-gray-100">
       <h2 className="text-2xl font-semibold text-gray-800 text-center mb-5">
         Top Categories
       </h2>
