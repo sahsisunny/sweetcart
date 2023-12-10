@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react';
 import { FaCartPlus } from 'react-icons/fa';
 import { GrFavorite } from 'react-icons/gr';
@@ -15,9 +16,16 @@ interface CategoriesProps {
 
 const ProductItem = ({ img, title, subtitle, price }: CategoriesProps) => {
     return (
-        <div className="relative w-full sm:w-80 rounded-[1rem] p-4 m-4 shadow-lg transition-all duration-500 ease-in-out">
+        <div className="relative w-full sm:w-80 rounded-[1rem] p-4 m-4 shadow-lg transition-all duration-500 ease-in-out cursor-pointer">
             <div className="mb-4 relative rounded-tr-[4rem] rounded-[0.7rem]">
-                <img src={img} alt="product" className="w-full h-full object-cover rounded-[inherit]" />
+                <Image
+                    width={300}
+                    height={300}
+                    priority={true}
+                    src={img}
+                    alt="product"
+                    className="w-full h-full object-cover rounded-[inherit]"
+                />
 
                 <div className="absolute bottom-[-1rem] right-0 text-black font-black p-2 rounded-[1rem_1rem_2rem_2rem]  bg-yellow-400">
                     ₹{price}

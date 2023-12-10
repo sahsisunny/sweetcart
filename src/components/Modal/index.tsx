@@ -20,7 +20,7 @@ const Modal = ({ onClose }: LoginModalProps) => {
         return () => {
             document.removeEventListener('mousedown', handleClickOutside);
         };
-    }, [onClose]);
+    });
 
     return (
         <dialog
