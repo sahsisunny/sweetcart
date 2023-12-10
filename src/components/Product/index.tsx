@@ -143,7 +143,7 @@ const data = [
 
 const Product = () => {
   return (
-    <section className="flex flex-col justify-center items-center bg-gray-100">
+    <section className="w-screen flex flex-col justify-center items-center bg-gray-100">
       <h2 className="text-2xl font-semibold text-gray-800 text-center mb-5">
         Top Categories
       </h2>

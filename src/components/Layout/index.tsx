@@ -13,7 +13,7 @@ function Layout({ children }: LayoutProps) {
   return (
     <>
       <Header />
-      <main className="w-screen min-h-screen flex flex-col items-center justify-center px-20">
+      <main className="w-screen min-h-screen flex flex-col items-center justify-center">
         <Navbar />
         <NavbarMobile />
         {children}
