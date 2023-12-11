@@ -37,32 +37,30 @@ interface MobileBarProps {
     activeTab: string;
 }
 
-const MobileBar: React.FC<MobileBarProps> = ({ activeTab }) => {
-    console.log(`MobileBar: ${activeTab}`);
+const tabs: TabConfig[] = [
+    {
+        label: 'Home',
+        icon: BiHomeAlt,
+        href: '/',
+        activeIcon: BiSolidHome,
+    },
+    {
+        label: 'Categories',
+        icon: BiCategory,
+        href: '/categories',
+        activeIcon: BiSolidCategory,
+    },
+    {
+        label: 'Cart',
+        icon: BsHandbag,
+        href: '/cart',
+        activeIcon: BsHandbagFill,
+    },
+];
 
+const MobileBar: React.FC<MobileBarProps> = ({ activeTab }) => {
     const [showModal, setShowModal] = React.useState(false);
     const onClose = () => setShowModal(false);
-
-    const tabs: TabConfig[] = [
-        {
-            label: 'Home',
-            icon: BiHomeAlt,
-            href: '/',
-            activeIcon: BiSolidHome,
-        },
-        {
-            label: 'Categories',
-            icon: BiCategory,
-            href: '/categories',
-            activeIcon: BiSolidCategory,
-        },
-        {
-            label: 'Cart',
-            icon: BsHandbag,
-            href: '/cart',
-            activeIcon: BsHandbagFill,
-        },
-    ];
 
     return (
         <div className="w-screen h-16 flex justify-between items-center bg-white lg:hidden border-2 sticky bottom-0 left-0">

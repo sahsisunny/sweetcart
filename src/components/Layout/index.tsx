@@ -15,7 +15,6 @@ function Layout({ children }: LayoutProps) {
     const { pathname } = router;
     const pathArray = pathname.split('/');
     const category = '/' + pathArray[1];
-    console.log(`Layout: ${category}`);
     return (
         <>
             <Header />

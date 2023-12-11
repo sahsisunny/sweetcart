@@ -6,42 +6,52 @@ const data = [
     {
         img: '/categories/paneer.png',
         title: 'Paneer Chilli',
+        href: '/categories/paneer-chilli',
     },
     {
         img: '/categories/rolls.png',
         title: 'Rolls',
+        href: '/categories/rolls',
     },
     {
         img: '/categories/menchurian.png',
         title: 'Menchurian',
+        href: '/categories/menchurian',
     },
     {
         img: '/categories/chowmein.png',
         title: 'Chowmein',
+        href: '/categories/chowmein',
     },
     {
         img: '/categories/friedrice.png',
         title: 'Fried Rice',
+        href: '/categories/fried-rice',
     },
     {
         img: '/categories/paneer.png',
         title: 'Paneer Chilli',
+        href: '/categories/paneer-chilli',
     },
     {
         img: '/categories/rolls.png',
         title: 'Rolls',
+        href: '/categories/rolls',
     },
     {
         img: '/categories/menchurian.png',
         title: 'Menchurian',
+        href: '/categories/menchurian',
     },
     {
         img: '/categories/chowmein.png',
         title: 'Chowmein',
+        href: '/categories/chowmein',
     },
     {
         img: '/categories/friedrice.png',
         title: 'Fried Rice',
+        href: '/categories/fried-rice',
     },
 ];
 
@@ -58,7 +68,7 @@ const Categories = () => {
           <FaAngleLeft className="text-2xl text-gray-800" />
         </div> */}
                 {data.map((item, index) => (
-                    <CategoriesItem key={index} img={item.img} title={item.title} />
+                    <CategoriesItem key={index} img={item.img} title={item.title} href={item.href} />
                 ))}
                 {/* <div className="p-4 flex items-center justify-center bg-white rounded-full shadow-lg cursor-pointer absolute right-0 mr-20 z-10">
           <FaAngleRight className="text-2xl text-gray-800" />

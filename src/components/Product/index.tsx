@@ -3,18 +3,15 @@ import React from 'react';
 import { FaCartPlus } from 'react-icons/fa';
 import { GrFavorite } from 'react-icons/gr';
 
-interface CategoriesProps {
+interface ProductItemProps {
     img: string;
     title: string;
     subtitle?: string;
     addToCart?: () => void;
-    removeFromCart?: () => void;
-    rating?: number;
-    price?: number;
-    offer?: number;
+    price: number;
 }
 
-const ProductItem = ({ img, title, subtitle, price }: CategoriesProps) => {
+const ProductItem = ({ img, title, subtitle, price }: ProductItemProps) => {
     return (
         <div className="relative w-screen sm:w-80 rounded-[1rem] p-4 sm:m-4 shadow-lg transition-all duration-500 ease-in-out cursor-pointer">
             <div className="mb-4 relative rounded-tr-[4rem] rounded-[0.7rem]">
@@ -56,105 +53,22 @@ const ProductItem = ({ img, title, subtitle, price }: CategoriesProps) => {
     );
 };
 
-const data = [
-    {
-        img: '/categories/paneer.png',
-        title: 'Paneer Chilli',
-        subtitle: 'Paneer Chilli with Rice',
-        quantity: 5,
-        rating: 4.5,
-        price: 29.99,
-        offer: 10,
-    },
-    {
-        img: '/categories/rolls.png',
-        title: 'Rolls',
-        subtitle: 'Egg Rolls with extra cheese',
-        quantity: 5,
-        rating: 4.5,
-        price: 29.99,
-        offer: 10,
-    },
-    {
-        img: '/categories/menchurian.png',
-        title: 'Menchurian',
-        subtitle: 'Menchurian with tasty sauce',
-        quantity: 5,
-        rating: 4.5,
-        price: 29.99,
-        offer: 10,
-    },
-    {
-        img: '/categories/chowmein.png',
-        title: 'Chowmein',
-        subtitle: 'Chowmein with extra cheese',
-        quantity: 5,
-        rating: 4.5,
-        price: 29.99,
-        offer: 10,
-    },
-    {
-        img: '/categories/friedrice.png',
-        title: 'Fried Rice',
-        quantity: 5,
-        rating: 4.5,
-        price: 29.99,
-        offer: 10,
-    },
-    {
-        img: '/categories/paneer.png',
-        title: 'Paneer Chilli',
-        quantity: 5,
-        rating: 4.5,
-        price: 29.99,
-        offer: 10,
-    },
-    {
-        img: '/categories/rolls.png',
-        title: 'Rolls',
-        quantity: 5,
-        rating: 4.5,
-        price: 29.99,
-        offer: 10,
-    },
-    {
-        img: '/categories/menchurian.png',
-        title: 'Menchurian',
-        quantity: 5,
-        rating: 4.5,
-        price: 29.99,
-        offer: 10,
-    },
-    {
-        img: '/categories/chowmein.png',
-        title: 'Chowmein',
-        quantity: 5,
-        rating: 4.5,
-        price: 29.99,
-        offer: 10,
-    },
-    {
-        img: '/categories/friedrice.png',
-        title: 'Fried Rice',
-        quantity: 5,
-        rating: 4.5,
-        price: 29.99,
-        offer: 10,
-    },
-];
+interface ProductProps {
+    title: string;
+    items: ProductItemProps[];
+}
 
-const Product = () => {
+const Product = ({ title, items }: ProductProps) => {
     return (
         <section className="w-screen flex flex-col justify-center items-center bg-gray-100">
-            <h2 className="text-2xl font-semibold text-gray-800 text-center mb-5">Top Categories</h2>
             <div className="flex flex-row flex-wrap justify-center items-center">
-                {data.map((item, index) => (
+                {items.map((item, index) => (
                     <ProductItem
                         key={index}
                         img={item.img}
                         title={item.title}
-                        price={item.price}
                         subtitle={item.subtitle}
+                        price={item.price}
                     />
                 ))}
             </div>
