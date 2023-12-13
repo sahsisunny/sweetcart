@@ -9,7 +9,7 @@ interface CategoriesProps {
 
 const CategoriesItem: React.FC<CategoriesProps> = ({ img, title, href }) => {
     return (
-        <div className="category w-[200px] min-w-[250px] flex flex-col items-center justify-center bg-white p-5 cursor-pointer mx-2 hover:shadow-lg transition duration-200 ease-in-out mb-2">
+        <div className="category w-[16rem] min-w-[250px] flex flex-col items-center justify-center bg-white p-5 cursor-pointer mx-2 hover:shadow-lg transition duration-200 ease-in-out mb-2">
             <Link href={href}>
                 <Image
                     src={img}
