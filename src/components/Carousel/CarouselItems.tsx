@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 
 export interface CarouselItem {
     title: string;
@@ -8,22 +9,68 @@ export interface CarouselItem {
 
 const CarouselItems = ({ title, description, image }: CarouselItem) => {
     return (
-        <div className="flex flex-col sm:flex-row justify-between items-center w-full mx-auto sm:p-10 rounded-md">
-            <div className="flex flex-col sm:w-1/2 p-4">
-                <h2 className="text-3xl sm:text-4xl md:text-5xl text-red-500 mb-4 font-semibold">Our Special Dish</h2>
-                <h2 className="text-4xl sm:text-5xl md:text-6xl text-yellow-500 mb-4 font-bold">{title}</h2>
-                <p className="text-xl sm:text-2xl md:text-3xl text-gray-500 mb-4">{description}</p>
+        <motion.div
+            className="flex flex-col-reverse sm:flex-row justify-between items-center w-full mx-auto sm:p-10 rounded-md"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+        >
+            <div className="flex flex-col sm:w-1/1 p-4">
+                <motion.h2
+                    className="text-3xl sm:text-4xl md:text-5xl text-red-500 mb-4 font-semibold"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.2 }}
+                >
+                    Our Special Dish
+                </motion.h2>
+                <motion.h2
+                    className="text-4xl sm:text-5xl md:text-6xl text-yellow-500 mb-4 font-bold"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.4 }}
+                >
+                    {title}
+                </motion.h2>
+                <motion.p
+                    className="text-xl sm:text-2xl md:text-3xl text-gray-500 mb-4"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.6 }}
+                >
+                    {description}
+                </motion.p>
                 <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
-                    <button className="bg-yellow-500 text-white px-4 py-2 rounded-md font-semibold">
+                    <motion.button
+                        className="bg-yellow-500 text-white px-4 py-2 rounded-md font-semibold"
+                        whileHover={{ scale: 1.05 }}
+                    >
                         View Details
-                    </button>
-                    <button className="bg-red-500 text-white px-4 py-2 rounded-md font-semibold">Order Now</button>
+                    </motion.button>
+                    <motion.button
+                        className="bg-red-500 text-white px-4 py-2 rounded-md font-semibold"
+                        whileHover={{ scale: 1.05 }}
+                    >
+                        Order Now
+                    </motion.button>
                 </div>
             </div>
             <div className="sm:w-1/2 flex justify-center">
-                <Image width={500} height={500} src={image} alt={title} className="rounded-md object-cover" />
+                <motion.div
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5, delay: 0.8 }}
+                >
+                    <Image
+                        width={500}
+                        height={500}
+                        src={image}
+                        alt={title}
+                        className="rounded-md object-cover sm:w-[30rem] w-[16rem]"
+                    />
+                </motion.div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 
