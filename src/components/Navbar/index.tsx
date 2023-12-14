@@ -3,6 +3,8 @@ import React, { useState } from 'react';
 import CustomSlider from '@/components/Slider';
 import Modal from '@/components/Modal';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
+import Link from 'next/link';
 
 function Navbar() {
     const [showModal, setShowModal] = React.useState(false);
@@ -17,38 +19,70 @@ function Navbar() {
 
     return (
         <>
-            <nav
-                className="w-full h-16 shadow-md  justify-between items-center px-4 lg:px-20 py-10 hidden lg:flex sticky top-0 left-0 z-10 bg-white"
+            <motion.nav
+                className="w-full h-16 shadow-md justify-between items-center px-4 lg:px-20 py-10 hidden lg:flex sticky top-0 left-0 z-10 bg-white"
                 id="navbar"
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                transition={{ duration: 0.3 }}
             >
-                <div className="text-lg  px-4 py-2 flex justify-center items-center  cursor-pointer" id="logo">
-                    <Image width={200} height={200} src="/logo.png" alt="logo" />
-                </div>
+                <motion.div
+                    className="text-lg  px-4 py-2 flex justify-center items-center  cursor-pointer"
+                    id="logo"
+                    whileHover={{ scale: 1.05 }}
+                >
+                    <Link href="/">
+                        <Image width={200} height={200} src="/logo.png" alt="logo" />
+                    </Link>
+                </motion.div>
 
                 <ul className="links text-lg flex justify-center items-center">
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Home</li>
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" onClick={handleSliderToggle}>
-                        Categories
-                    </li>
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">About</li>
-                    <li className="px-4 py-2 hover:bg-gray-100 cursor-pointer">Contact</li>
+                    <motion.li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" whileHover={{ scale: 1.05 }}>
+                        <Link href="/">Home</Link>
+                    </motion.li>
+                    <motion.li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" whileHover={{ scale: 1.05 }}>
+                        <Link href="/categories">Categories</Link>
+                    </motion.li>
+                    <motion.li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" whileHover={{ scale: 1.05 }}>
+                        About
+                    </motion.li>
+                    <motion.li className="px-4 py-2 hover:bg-gray-100 cursor-pointer" whileHover={{ scale: 1.05 }}>
+                        Contact
+                    </motion.li>
                 </ul>
 
                 <div className="cart text-3xl flex justify-center items-center" id="cart">
-                    <CiSearch className="text-5xl m-2 p-2 hover:bg-gray-100 cursor-pointer rounded-[50%]" />
-                    <div className="relative  justify-center items-center">
-                        <CiShoppingCart className="text-3xl mr-2" />
-                        <span className="absolute top-0 right-0 bg-red-500 text-white rounded-full text-xs px-1 truncate">
+                    <motion.div
+                        className="text-3xl m-2 p-2 hover:bg-gray-100 cursor-pointer rounded-[50%]"
+                        whileHover={{ scale: 1.05 }}
+                    >
+                        <CiSearch />
+                    </motion.div>
+                    <motion.div
+                        className="relative text-3xl m-2 p-2 hover:bg-gray-100 cursor-pointer rounded-[50%]"
+                        whileHover={{ scale: 1.05 }}
+                        onClick={handleSliderToggle}
+                    >
+                        <CiShoppingCart />
+                        <motion.span
+                            className="absolute top-0 right-0 bg-red-500 text-white rounded-full text-xs px-1 truncate"
+                            whileHover={{ scale: 1.05 }}
+                        >
                             {displayContent}
-                        </span>
-                    </div>
-                    <CiUser
-                        className="text-5xl m-2 p-2 hover:bg-gray-100 cursor-pointer rounded-[50%]"
+                        </motion.span>
+                    </motion.div>
+
+                    <motion.div
+                        className="text-3xl m-2 p-2 hover:bg-gray-100 cursor-pointer rounded-[50%]"
+                        whileHover={{ scale: 1.05 }}
                         onClick={() => setShowModal(true)}
-                    />
+                    >
+                        <CiUser />
+                    </motion.div>
                 </div>
                 {showModal && <Modal onClose={onClose} />}
-            </nav>
+            </motion.nav>
             <CustomSlider
                 isOpen={sliderOpen}
                 openFrom="right" // or "left"

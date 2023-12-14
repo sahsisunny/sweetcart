@@ -4,6 +4,7 @@ import { FaRegUser, FaUser } from 'react-icons/fa6';
 import { BsHandbagFill, BsHandbag } from 'react-icons/bs';
 import { BiSolidCategory, BiCategory } from 'react-icons/bi';
 import { BiSolidHome, BiHomeAlt } from 'react-icons/bi';
+import { motion } from 'framer-motion';
 import Modal from '@/components/Modal';
 import Link from 'next/link';
 
@@ -17,12 +18,12 @@ interface MobileTabProps {
 
 const MobileTab: React.FC<MobileTabProps> = ({ label, icon: Icon, href, onClick, isActive }) => {
     return (
-        <div className="w-1/4 flex justify-center items-center text-gray-500">
+        <motion.div className="w-1/4 flex justify-center items-center text-gray-500" whileHover={{ scale: 1.1 }}>
             <Link className="flex flex-col items-center" href={href} onClick={onClick}>
                 {isActive ? <Icon className="text-2xl text-center" /> : <Icon className="text-2xl text-center" />}
                 <p className="text-center text-sm">{label}</p>
             </Link>
-        </div>
+        </motion.div>
     );
 };
 
@@ -63,7 +64,13 @@ const MobileBar: React.FC<MobileBarProps> = ({ activeTab }) => {
     const onClose = () => setShowModal(false);
 
     return (
-        <div className="w-screen h-16 flex justify-between items-center bg-white lg:hidden border-2 sticky bottom-0 left-0">
+        <motion.div
+            className="w-screen h-16 flex justify-between items-center bg-white lg:hidden border-2 sticky bottom-0 left-0"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.3 }}
+        >
             {tabs.map((tab, index) => (
                 <MobileTab
                     key={index}
@@ -73,7 +80,7 @@ const MobileBar: React.FC<MobileBarProps> = ({ activeTab }) => {
                     href={tab.href}
                 />
             ))}
-            <div className="w-1/4 flex justify-center items-center text-gray-500">
+            <motion.div className="w-1/4 flex justify-center items-center text-gray-500" whileHover={{ scale: 1.1 }}>
                 <button className="flex flex-col items-center" onClick={() => setShowModal(true)}>
                     {showModal ? (
                         <FaUser className="text-2xl text-center" />
@@ -82,10 +89,10 @@ const MobileBar: React.FC<MobileBarProps> = ({ activeTab }) => {
                     )}
                     <p className="text-center text-sm">Account</p>
                 </button>
-            </div>
+            </motion.div>
 
             {showModal && <Modal onClose={onClose} />}
-        </div>
+        </motion.div>
     );
 };
 
