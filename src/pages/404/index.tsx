@@ -7,7 +7,7 @@ import Layout from '@/components/Layout';
 const NotFoundPage = () => {
     return (
         <Layout>
-            <div className="flex flex-col items-center justify-center w-screen h-[9 0vh]">
+            <div className="flex flex-col items-center justify-center w-screen h-[90vh]">
                 <motion.img
                     src="/404.png"
                     alt="404"

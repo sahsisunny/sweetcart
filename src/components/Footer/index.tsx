@@ -16,7 +16,7 @@ const Footer = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="bg-light w-full mt-5  px-4 sm:px-20 "
+            className="bg-light w-full mt-5  px-4 sm:px-20 shadow-2xl"
         >
             <div className="flex flex-col md:flex-row justify-around items-center">
                 <motion.div
