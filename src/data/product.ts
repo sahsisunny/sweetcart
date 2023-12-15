@@ -84,3 +84,21 @@ export const product = [
         offer: 10,
     },
 ];
+export const cartItems = [
+    {
+        img: '/categories/paneer.png',
+        title: 'Paneer Chilli',
+        quantity: 5,
+        rating: 4.5,
+        price: 29.99,
+        offer: 10,
+    },
+    {
+        img: '/categories/rolls.png',
+        title: 'Rolls',
+        quantity: 5,
+        rating: 4.5,
+        price: 29.99,
+        offer: 10,
+    },
+];

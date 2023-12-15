@@ -30,7 +30,7 @@ const Modal = ({ onClose }: LoginModalProps) => {
 
     return (
         <motion.dialog
-            className="fixed bottom-0 left-0 w-full h-full flex justify-center items-end bg-black bg-opacity-80"
+            className="fixed bottom-0 left-0 w-full h-full flex justify-center sm:items-center items-end bg-black bg-opacity-80"
             id="login-modal"
             initial={{ opacity: 0, y: window.innerWidth < 768 ? 0 : 50 }}
             animate={controls}
@@ -39,7 +39,7 @@ const Modal = ({ onClose }: LoginModalProps) => {
         >
             <motion.div
                 ref={modalRef}
-                className="p-6 rounded-md sm:w-[90%] w-screen relative flex flex-col justify-center items-center bg-white "
+                className="p-6 rounded-md sm:w-[40%] w-screen relative flex flex-col justify-center items-center bg-white "
                 initial={{ y: window.innerWidth < 768 ? 0 : 50, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: window.innerWidth < 768 ? 0 : 50, opacity: 0 }}
