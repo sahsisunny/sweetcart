@@ -1,10 +1,11 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import { StaticImageData } from 'next/image';
 
 export interface CarouselItem {
     title: string;
     description: string;
-    image: string;
+    image: StaticImageData;
 }
 
 const CarouselItems = ({ title, description, image }: CarouselItem) => {
@@ -15,7 +16,7 @@ const CarouselItems = ({ title, description, image }: CarouselItem) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
         >
-            <div className="flex flex-col sm:w-1/1 p-4">
+            <div className="flex flex-col sm:w-1/1 p-4 h-full">
                 <motion.h2
                     className="text-3xl sm:text-4xl md:text-5xl text-red-500 mb-4 font-semibold"
                     initial={{ opacity: 0, y: 20 }}
@@ -25,7 +26,7 @@ const CarouselItems = ({ title, description, image }: CarouselItem) => {
                     Our Special Dish
                 </motion.h2>
                 <motion.h2
-                    className="text-4xl sm:text-5xl md:text-6xl text-yellow-500 mb-4 font-bold"
+                    className="text-3xl sm:text-4xl md:text-6xl text-yellow-500 mb-4 font-bold"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.4 }}
@@ -33,7 +34,7 @@ const CarouselItems = ({ title, description, image }: CarouselItem) => {
                     {title}
                 </motion.h2>
                 <motion.p
-                    className="text-xl sm:text-2xl md:text-3xl text-gray-500 mb-4"
+                    className="  text-lg sm:text-2xl text-gray-500 mb-4"
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.6 }}
@@ -66,7 +67,7 @@ const CarouselItems = ({ title, description, image }: CarouselItem) => {
                         height={500}
                         src={image}
                         alt={title}
-                        className="rounded-md object-cover sm:w-[30rem] w-[16rem]"
+                        className="rounded-md object-fit sm:w-[30rem] w-[16rem] h-full"
                     />
                 </motion.div>
             </div>
