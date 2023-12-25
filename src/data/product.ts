@@ -1,6 +1,6 @@
 export const product = [
     {
-        img: '/categories/paneer.png',
+        img: '/categories/paneer.webp',
         title: 'Paneer Chilli',
         subtitle: 'Paneer Chilli with Rice',
         quantity: 5,
@@ -9,7 +9,7 @@ export const product = [
         offer: 10,
     },
     {
-        img: '/categories/rolls.png',
+        img: '/categories/rolls.webp',
         title: 'Rolls',
         subtitle: 'Egg Rolls with extra cheese',
         quantity: 5,
@@ -18,7 +18,7 @@ export const product = [
         offer: 10,
     },
     {
-        img: '/categories/menchurian.png',
+        img: '/categories/menchurian.webp',
         title: 'Menchurian',
         subtitle: 'Menchurian with tasty sauce',
         quantity: 5,
@@ -27,7 +27,7 @@ export const product = [
         offer: 10,
     },
     {
-        img: '/categories/chowmein.png',
+        img: '/categories/chowmein.webp',
         title: 'Chowmein',
         subtitle: 'Chowmein with extra cheese',
         quantity: 5,
@@ -36,7 +36,7 @@ export const product = [
         offer: 10,
     },
     {
-        img: '/categories/friedrice.png',
+        img: '/categories/friedrice.webp',
         title: 'Fried Rice',
         quantity: 5,
         rating: 4.5,
@@ -44,7 +44,7 @@ export const product = [
         offer: 10,
     },
     {
-        img: '/categories/paneer.png',
+        img: '/categories/paneer.webp',
         title: 'Paneer Chilli',
         quantity: 5,
         rating: 4.5,
@@ -52,7 +52,7 @@ export const product = [
         offer: 10,
     },
     {
-        img: '/categories/rolls.png',
+        img: '/categories/rolls.webp',
         title: 'Rolls',
         quantity: 5,
         rating: 4.5,
@@ -60,7 +60,7 @@ export const product = [
         offer: 10,
     },
     {
-        img: '/categories/menchurian.png',
+        img: '/categories/menchurian.webp',
         title: 'Menchurian',
         quantity: 5,
         rating: 4.5,
@@ -68,7 +68,7 @@ export const product = [
         offer: 10,
     },
     {
-        img: '/categories/chowmein.png',
+        img: '/categories/chowmein.webp',
         title: 'Chowmein',
         quantity: 5,
         rating: 4.5,
@@ -76,7 +76,7 @@ export const product = [
         offer: 10,
     },
     {
-        img: '/categories/friedrice.png',
+        img: '/categories/friedrice.webp',
         title: 'Fried Rice',
         quantity: 5,
         rating: 4.5,
@@ -86,7 +86,7 @@ export const product = [
 ];
 export const cartItems = [
     {
-        img: '/categories/paneer.png',
+        img: '/categories/paneer.webp',
         title: 'Paneer Chilli',
         quantity: 5,
         rating: 4.5,
@@ -94,7 +94,7 @@ export const cartItems = [
         offer: 10,
     },
     {
-        img: '/categories/rolls.png',
+        img: '/categories/rolls.webp',
         title: 'Rolls',
         quantity: 5,
         rating: 4.5,

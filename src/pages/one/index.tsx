@@ -3,7 +3,7 @@ import ProductDetail from '@/components/Product/ProductDetail';
 import Layout from '@/components/Layout';
 
 const product = {
-    imageList: ['/categories/paneer.png', '/categories/rolls.png', '/categories/friedrice.png'],
+    imageList: ['/categories/paneer.webp', '/categories/rolls.webp', '/categories/friedrice.webp'],
     title: 'Paneer Chilli',
     description:
         'Experience the perfect blend of succulent paneer cubes stir-fried in a flavorful blend of spices, tossed with colorful bell peppers, and served with aromatic fried rice. A delightful fusion of Indian and Chinese cuisines.',
